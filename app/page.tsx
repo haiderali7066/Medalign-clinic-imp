@@ -186,6 +186,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Services></Services>
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -196,9 +197,9 @@ export default function Home() {
             variants={containerVariants}
             className="text-center mb-16"
           >
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4">
+            {/* <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4">
               Our Services
-            </motion.h2>
+            </motion.h2> */}
             <motion.p variants={itemVariants} className="text-lg text-muted-foreground">
               Comprehensive physiotherapy solutions for all your needs
             </motion.p>
@@ -236,7 +237,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Services></Services>
 
       {/* About Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary text-white">

@@ -118,7 +118,7 @@ export default function Services() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -6 }}
-                className="bg-white text-foreground p-8 rounded-2xl shadow-md hover:shadow-xl transition"
+                className="bg-white text-foreground p-8  shadow-md hover:shadow-xl transition"
               >
                 <Icon
                   className="w-12 h-12 text-primary mb-6"
