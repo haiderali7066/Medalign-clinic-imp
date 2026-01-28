@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -27,7 +27,14 @@ export default function Header() {
         duration: 0.4,
       },
     }),
-  }
+  };
+
+  // WhatsApp number (replace with your number)
+  const whatsappNumber = "92326034126";
+  const whatsappMessage = encodeURIComponent(
+    "Hello! I would like to book an appointment.",
+  );
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
@@ -39,7 +46,10 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <Link
+              href="/"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
               <Image
                 src="/logo.png"
                 alt="MedAlign Physiotherapy"
@@ -77,13 +87,16 @@ export default function Header() {
             transition={{ duration: 0.5 }}
             className="hidden md:block"
           >
-            <motion.button
+            <motion.a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-2 bg-primary text-white font-medium hover:shadow-lg transition-shadow"
             >
-              <Link href="/appointment">Book Now</Link>
-            </motion.button>
+              Book Now
+            </motion.a>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -101,7 +114,9 @@ export default function Header() {
         {/* Mobile Menu */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={isOpen ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
+          animate={
+            isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }
+          }
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden bg-muted"
         >
@@ -121,17 +136,20 @@ export default function Header() {
                 </Link>
               </motion.div>
             ))}
-            <motion.button
+            <motion.a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setIsOpen(false)}
-              className="w-full px-4 py-2 bg-primary text-white font-medium hover:shadow-lg transition-shadow mt-2"
+              className="w-full block px-4 py-2 bg-primary text-white font-medium hover:shadow-lg transition-shadow mt-2 text-center"
             >
-              <Link href="/appointment">Book Now</Link>
-            </motion.button>
+              Book Now
+            </motion.a>
           </motion.nav>
         </motion.div>
       </div>
     </header>
-  )
+  );
 }

@@ -73,6 +73,19 @@ export default function Footer() {
                   051 2711346
                 </a>
               </motion.div>
+              <motion.div
+                className="flex gap-3 items-center"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Phone className="w-5 h-5" />
+                <a
+                  href="tel:+92326034216"
+                  className="hover:underline transition-all"
+                >
+                  +92 326 034216
+                </a>
+              </motion.div>
 
               <motion.div
                 className="flex gap-3 items-center"
@@ -87,8 +100,6 @@ export default function Footer() {
                   Medalign.physio@gmail.com
                 </a>
               </motion.div>
-
-              
             </div>
           </motion.div>
 

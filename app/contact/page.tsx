@@ -88,7 +88,8 @@ export default function Contact() {
                 label: "Address",
                 value: "Bahria Town Phase 4, Islamabad",
               },
-              { icon: Phone, label: "Phone", value: "051 2711346" },
+              { icon: Phone, label: "Landline", value: "051 2711346" },
+              { icon: Phone, label: "Phone", value: "+92326034126" },
               {
                 icon: Mail,
                 label: "Email",
@@ -140,148 +141,6 @@ export default function Contact() {
                 loading="lazy"
               />
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="text-center mb-12"
-          >
-            <motion.h2
-              variants={itemVariants}
-              className="text-4xl font-bold mb-4"
-            >
-              Send Us A Message
-            </motion.h2>
-            <motion.p
-              variants={itemVariants}
-              className="text-lg text-muted-foreground"
-            >
-              Fill out the form below and we'll get back to you shortly.
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white p-8 border border-border shadow-lg"
-            >
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
-                >
-                  <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 0.6 }}
-                    className="text-6xl mb-4"
-                  >
-                    ✓
-                  </motion.div>
-                  <h3 className="text-2xl font-bold mb-2 text-primary">
-                    Thank You!
-                  </h3>
-                  <p className="text-muted-foreground">
-                    We've received your message and will contact you soon.
-                  </p>
-                </motion.div>
-              ) : (
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={containerVariants}
-                  className="space-y-6"
-                >
-                  {/* Name */}
-                  <motion.div variants={itemVariants}>
-                    <label className="block font-semibold mb-2">
-                      Full Name *
-                    </label>
-                    <motion.input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      whileFocus={{ scale: 1.02 }}
-                      className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
-                      placeholder="Your full name"
-                    />
-                  </motion.div>
-
-                  {/* Phone */}
-                  <motion.div variants={itemVariants}>
-                    <label className="block font-semibold mb-2">
-                      Phone Number *
-                    </label>
-                    <motion.input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      whileFocus={{ scale: 1.02 }}
-                      className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
-                      placeholder="Your phone number"
-                    />
-                  </motion.div>
-
-                  {/* Optional Email */}
-                  <motion.div variants={itemVariants}>
-                    <label className="block font-semibold mb-2">Email</label>
-                    <motion.input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      whileFocus={{ scale: 1.02 }}
-                      className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
-                      placeholder="your@email.com"
-                    />
-                  </motion.div>
-
-                  {/* Optional Message */}
-                  <motion.div variants={itemVariants}>
-                    <label className="block font-semibold mb-2">Message</label>
-                    <motion.textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={6}
-                      whileFocus={{ scale: 1.02 }}
-                      className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all resize-none bg-white"
-                      placeholder="Tell us about your inquiry..."
-                    />
-                  </motion.div>
-
-                  <motion.button
-                    variants={itemVariants}
-                    type="submit"
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 30px rgba(45, 138, 143, 0.3)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full px-6 py-3 bg-primary text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
-                  >
-                    Send Message <Send size={20} />
-                  </motion.button>
-                </motion.div>
-              )}
-            </form>
           </motion.div>
         </div>
       </section>
