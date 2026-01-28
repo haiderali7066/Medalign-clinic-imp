@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const heroImages = [
-  "/h1.jpg",
+  "https://res.cloudinary.com/dvu9vmcqd/image/upload/v1769616099/h1_kru0u2.jpg",
   "/h2.jpg",
   "/h3.jpg",
 ];
