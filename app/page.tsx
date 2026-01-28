@@ -59,6 +59,12 @@ export default function Home() {
         "Posture correction and workspace optimization to prevent pain from prolonged sitting or repetitive tasks",
       icon: "💻",
     },
+    {
+      title: "Cardiopulmonary Physiotherapy",
+      description:
+        "Rehabilitation for heart and lung conditions to improve breathing and endurance",
+      icon: "❤️",
+    },
   ];
 
   const features = [
@@ -75,11 +81,7 @@ export default function Home() {
       title: "Flexible Hours",
       description: "Appointments that suit your schedule",
     },
-    {
-      title: "Cardiopulmonary Physiotherapy",
-      description:
-        "Specialized care for heart and lung conditions to improve endurance and recovery",
-    },
+    
   ];
 
 
