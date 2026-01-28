@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Whoweare from "@/components/whoweare";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -144,6 +145,8 @@ export default function Contact() {
           </motion.div>
         </div>
       </section>
+
+      <Whoweare></Whoweare>
 
       <Footer />
     </div>
