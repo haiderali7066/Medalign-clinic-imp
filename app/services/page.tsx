@@ -31,7 +31,7 @@ export default function Services() {
   const services = [
     {
       title: "Sports Physiotherapy",
-      image: "/services/sports.jpg",
+      image: "/s.jpg",
       description:
         "Injury prevention, performance optimization, and full rehabilitation for athletes at every level.",
     },
@@ -43,7 +43,7 @@ export default function Services() {
     },
     {
       title: "Rehabilitation",
-      image: "/h2.jpg",
+      image: "/s2.jpg",
       description:
         "Structured recovery programs after injury, surgery, or prolonged immobility to rebuild strength and independence.",
     },
@@ -55,37 +55,37 @@ export default function Services() {
     },
     {
       title: "Orthopedic Physiotherapy",
-      image: "/services/ortho.jpg",
+      image: "/s3.jpg",
       description:
         "Specialized care for fractures, joint replacements, ligament injuries, and musculoskeletal conditions.",
     },
     {
       title: "Neurological Physiotherapy",
-      image: "/services/neuro.jpg",
+      image: "/h2.jpg",
       description:
         "Movement retraining and functional recovery for stroke, nerve injuries, Parkinson’s disease, and neurological disorders.",
     },
     {
       title: "Geriatric / Senior Care",
-      image: "/services/geriatric.jpg",
+      image: "/s4.jpg",
       description:
         "Fall prevention, arthritis management, balance training, and mobility improvement for older adults.",
     },
     {
       title: "Women’s Health Physiotherapy",
-      image: "/services/women.jpg",
+      image: "/s5.jpg",
       description:
         "Pelvic floor rehabilitation, postnatal recovery, and pregnancy-related pain management.",
     },
     {
       title: "Functional Training & Movement Optimization",
-      image: "/services/functional.jpg",
+      image: "/s6.jpg",
       description:
         "Balance, coordination, and strength training to improve real-life movement and performance.",
     },
     {
       title: "Ergonomic & Workplace Assessment",
-      image: "/services/ergonomic.jpg",
+      image: "/s7.jpg",
       description:
         "Posture correction and workspace optimization to prevent pain from prolonged sitting or repetitive tasks.",
     },
