@@ -10,6 +10,7 @@ import Footer from '@/components/footer'
 import Services from "@/components/home-services";
 import Testimonials from "@/components/testimonials";
 import HeroSection from '@/components/hero'
+import Whoweare from "@/components/whoweare";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -436,6 +437,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <Whoweare></Whoweare>
 
       <Footer />
     </div>
