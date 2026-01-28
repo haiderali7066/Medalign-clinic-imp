@@ -38,33 +38,50 @@ export default function Home() {
 
   const services = [
     {
-      title: 'Rehabilitation',
-      description: 'Post-surgical and injury recovery programs tailored to your needs',
-      icon: '🏥',
+      title: "Rehabilitation",
+      description:
+        "Post-surgical and injury recovery programs tailored to your needs",
+      icon: "🏥",
     },
     {
-      title: 'Sports Therapy',
-      description: 'Performance enhancement and injury prevention for athletes',
-      icon: '⚽',
+      title: "Sports Therapy",
+      description: "Performance enhancement and injury prevention for athletes",
+      icon: "⚽",
     },
     {
-      title: 'Pain Management',
-      description: 'Advanced techniques for acute and chronic pain relief',
-      icon: '💪',
+      title: "Pain Management",
+      description: "Advanced techniques for acute and chronic pain relief",
+      icon: "💪",
     },
     {
-      title: 'Wellness Care',
-      description: 'Preventive care and lifestyle optimization programs',
-      icon: '🎯',
+      title: "Ergonomic & Workplace Assessment",
+      description:
+        "Posture correction and workspace optimization to prevent pain from prolonged sitting or repetitive tasks",
+      icon: "💻",
     },
-  ]
+  ];
 
   const features = [
-    { title: 'Expert Team', description: 'Highly qualified physiotherapists' },
-    { title: 'Personalized', description: 'Custom treatment plans for you' },
-    { title: 'Modern Facility', description: 'State-of-the-art equipment' },
-    { title: 'Flexible Hours', description: 'Appointments that suit your schedule' },
-  ]
+    { title: "Expert Team", description: "Highly qualified physiotherapists" },
+    {
+      title: "Patient-Centered Care",
+      description: "Custom treatment plans focused on your needs",
+    },
+    {
+      title: "Modern Facility",
+      description: "State-of-the-art equipment we have",
+    },
+    {
+      title: "Flexible Hours",
+      description: "Appointments that suit your schedule",
+    },
+    {
+      title: "Cardiopulmonary Physiotherapy",
+      description:
+        "Specialized care for heart and lung conditions to improve endurance and recovery",
+    },
+  ];
+
 
   return (
     <div className="bg-white text-foreground overflow-hidden">
@@ -264,7 +281,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <Image
-                src="/00.jpeg"
+                src="/0.jpeg"
                 alt="Clinic interior"
                 width={500}
                 height={500}
@@ -348,12 +365,16 @@ export default function Home() {
           {/* Contact Cards */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { icon: Phone, label: "Phone", value: "+92 (300) 123-4567" },
-              { icon: Mail, label: "Email", value: "info@medalign.pk" },
+              { icon: Phone, label: "Phone", value: "051 2711346" },
+              {
+                icon: Mail,
+                label: "Email",
+                value: "Medalign.physio@gmail.com",
+              },
               {
                 icon: MapPin,
                 label: "Location",
-                value: "Bahria Town, Islamabad",
+                value: "Bahria Town Phase 4, Islamabad",
               },
             ].map((contact, idx) => {
               const Icon = contact.icon;
@@ -395,7 +416,7 @@ export default function Home() {
             className="text-center mt-12"
           >
             <a
-              href="https://wa.me/923000000000" // Replace with actual WhatsApp number
+              href="https://wa.me/92512711346"
               target="_blank"
               rel="noopener noreferrer"
             >

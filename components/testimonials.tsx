@@ -44,12 +44,12 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <section className="w-full max-w-md mx-auto px-4 py-12">
-      <h2 className="text-2xl font-bold text-center mb-6">
+    <section className="w-full max-w-3xl mx-auto px-4 py-12 sm:py-16">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
         What Our Patients Say
       </h2>
 
-      <div className="relative overflow-hidden rounded-xl shadow-md border border-b-blue-400 bg-white">
+      <div className="relative overflow-hidden rounded-xl shadow-lg border border-b-blue-400 bg-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -57,14 +57,14 @@ export default function TestimonialsCarousel() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="p-6 flex flex-col items-center text-center"
+            className="p-6 sm:p-8 flex flex-col items-center text-center"
           >
             {/* Rating Stars */}
             <div className="flex mb-3">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-5 h-5 ${
+                  className={`w-5 h-5 sm:w-6 sm:h-6 ${
                     i < testimonials[current].rating
                       ? "text-yellow-400"
                       : "text-gray-300"
@@ -73,13 +73,13 @@ export default function TestimonialsCarousel() {
               ))}
             </div>
 
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <p className="text-gray-700 mb-4 text-sm sm:text-base md:text-lg">
               "{testimonials[current].text}"
             </p>
-            <h3 className="font-semibold text-gray-900">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg md:text-xl">
               {testimonials[current].name}
             </h3>
-            <span className="text-sm text-gray-500">
+            <span className="text-sm sm:text-base text-gray-500">
               {testimonials[current].role}
             </span>
           </motion.div>
@@ -88,15 +88,15 @@ export default function TestimonialsCarousel() {
         {/* Navigation Arrows */}
         <button
           onClick={prevTestimonial}
-          className="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition"
+          className="absolute top-1/2 left-2 -translate-y-1/2 p-2 sm:p-3 bg-white rounded-full shadow hover:bg-gray-100 transition"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
         <button
           onClick={nextTestimonial}
-          className="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition"
+          className="absolute top-1/2 right-2 -translate-y-1/2 p-2 sm:p-3 bg-white rounded-full shadow hover:bg-gray-100 transition"
         >
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
       </div>
 
@@ -105,7 +105,7 @@ export default function TestimonialsCarousel() {
         {testimonials.map((_, index) => (
           <span
             key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
+            className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full cursor-pointer transition-colors ${
               index === current ? "bg-blue-600" : "bg-gray-300"
             }`}
             onClick={() => setCurrent(index)}

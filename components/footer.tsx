@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Instagram } from 'lucide-react'
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 
 export default function Footer() {
   const containerVariants = {
@@ -14,7 +14,7 @@ export default function Footer() {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -23,7 +23,7 @@ export default function Footer() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
     <footer className="bg-primary text-primary-foreground py-16 mt-20">
@@ -38,8 +38,12 @@ export default function Footer() {
           {/* About */}
           <motion.div variants={itemVariants}>
             <h3 className="font-bold text-xl mb-4">MedAlign</h3>
-            <p className="text-sm opacity-90 leading-relaxed">Rehab. Realign. Restore.</p>
-            <p className="text-sm opacity-80 mt-3">Expert physiotherapy care dedicated to your recovery and wellness.</p>
+            <p className="text-sm opacity-90 leading-relaxed">
+              Rehab. Realign. Restore.
+            </p>
+            <p className="text-sm opacity-80 mt-3">
+              Expert physiotherapy care dedicated to your recovery and wellness.
+            </p>
           </motion.div>
 
           {/* Contact Info */}
@@ -55,16 +59,36 @@ export default function Footer() {
                   <p>Islamabad, 46000</p>
                 </div>
               </div>
+
               <motion.div
                 className="flex gap-3 items-center"
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
                 <Phone className="w-5 h-5" />
-                <a href="tel:+923260341216" className="hover:underline transition-all">
-                  0326 0341216
+                <a
+                  href="tel:+92512711346"
+                  className="hover:underline transition-all"
+                >
+                  051 2711346
                 </a>
               </motion.div>
+
+              <motion.div
+                className="flex gap-3 items-center"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Mail className="w-5 h-5" />
+                <a
+                  href="mailto:Medalign.physio@gmail.com"
+                  className="hover:underline transition-all"
+                >
+                  Medalign.physio@gmail.com
+                </a>
+              </motion.div>
+
+              
             </div>
           </motion.div>
 
@@ -73,16 +97,19 @@ export default function Footer() {
             <h3 className="font-bold text-xl mb-4">Quick Links</h3>
             <div className="space-y-3 text-sm">
               {[
-                { label: 'About Us', href: '/about' },
-                { label: 'Services', href: '/services' },
-                { label: 'Book Appointment', href: '/appointment' },
+                { label: "About Us", href: "/about" },
+                { label: "Services", href: "/services" },
+                { label: "Book Appointment", href: "/appointment" },
               ].map((link) => (
                 <motion.div
                   key={link.href}
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Link href={link.href} className="block hover:underline transition-all">
+                  <Link
+                    href={link.href}
+                    className="block hover:underline transition-all"
+                  >
                     {link.label}
                   </Link>
                 </motion.div>
@@ -118,9 +145,12 @@ export default function Footer() {
           variants={itemVariants}
           className="pt-8 text-center text-sm opacity-80"
         >
-          <p>&copy; {new Date().getFullYear()} MedAlign Physiotherapy. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} MedAlign Physiotherapy. All rights
+            reserved.
+          </p>
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }

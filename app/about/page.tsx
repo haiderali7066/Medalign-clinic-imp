@@ -27,26 +27,44 @@ const itemVariants = {
 }
 
 export default function About() {
-  const team = [
+  const physiotherapists = [
     {
-      name: 'Dr. Samir Khan',
-      role: 'Lead Physiotherapist',
-      specialty: 'Sports Injury & Rehabilitation',
-      image: '/hero-physio.jpg',
+      name: "Anum Zafar",
+      designation: "Consultant Physiotherapist",
+      qualifications: ["DPT", "MS-NMPT"],
     },
     {
-      name: 'Aisha Ahmed',
-      role: 'Senior Therapist',
-      specialty: 'Orthopedic Rehabilitation',
-      image: '/clinic-interior.jpg',
+      name: "Rohma Samman",
+      designation: "Senior Physiotherapist",
+      qualifications: ["DPT", "MS-NMPT"],
     },
     {
-      name: 'Hassan Ali',
-      role: 'Sports Specialist',
-      specialty: 'Chronic Pain Management',
-      image: '/sports-physio.jpg',
+      name: "Hamza Tahir",
+      designation: "Senior Physiotherapist",
+      qualifications: ["DPT", "MS-MSKPT"],
     },
-  ]
+    {
+      name: "Narimane Afzal",
+      designation: "Senior Physiotherapist",
+      qualifications: ["DPT", "MS-CPPT"],
+    },
+    {
+      name: "Dur-e-Shahwar",
+      designation: "Senior Physiotherapist",
+      qualifications: ["DPT", "MS-MSKPT"],
+    },
+    {
+      name: "Abeera tul Jannat Satti",
+      designation: "Senior Physiotherapist",
+      qualifications: ["DPT", "MS-MNPT"],
+    },
+    {
+      name: "Afifa Manzoor",
+      designation: "Clinical Physiotherapist",
+      qualifications: ["DPT"],
+    },
+  ];
+
 
   const values = [
     {
@@ -78,10 +96,16 @@ export default function About() {
           variants={containerVariants}
           className="max-w-7xl mx-auto text-center"
         >
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl text-amber-50 font-bold mb-6">
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-6xl text-amber-50 font-bold mb-6"
+          >
             About MedAlign
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            variants={itemVariants}
+            className="text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed"
+          >
             Dedicated to excellence in physiotherapy care and recovery.
           </motion.p>
         </motion.div>
@@ -114,14 +138,18 @@ export default function About() {
             <motion.div variants={itemVariants} className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To provide evidence-based physiotherapy care that empowers patients to achieve their recovery goals and optimize their physical health.
+                To provide evidence-based physiotherapy care that empowers
+                patients to achieve their recovery goals and optimize their
+                physical health.
               </p>
             </motion.div>
 
             <motion.div variants={itemVariants}>
               <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To be the leading physiotherapy clinic in the region, recognized for clinical excellence, patient satisfaction, and innovative treatment approaches.
+                To be the leading physiotherapy clinic in the region, recognized
+                for clinical excellence, patient satisfaction, and innovative
+                treatment approaches.
               </p>
             </motion.div>
           </motion.div>
@@ -137,14 +165,29 @@ export default function About() {
           variants={containerVariants}
           className="max-w-4xl mx-auto"
         >
-          <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-8">
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl font-bold mb-8"
+          >
             Our Story
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-lg text-muted-foreground leading-relaxed mb-6">
-            MedAlign Physiotherapy was founded on the belief that every patient deserves access to world-class physiotherapy care. Located in the heart of Bahria Town Phase 4, Islamabad, we've helped hundreds of patients recover from injuries, surgeries, and chronic conditions.
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-muted-foreground leading-relaxed mb-6"
+          >
+            MedAlign Physiotherapy was founded on the belief that every patient
+            deserves access to world-class physiotherapy care. Located in the
+            heart of Bahria Town Phase 4, Islamabad, we've helped hundreds of
+            patients recover from injuries, surgeries, and chronic conditions.
           </motion.p>
-          <motion.p variants={itemVariants} className="text-lg text-muted-foreground leading-relaxed">
-            Our team of experienced physiotherapists combines traditional knowledge with modern clinical techniques to deliver results. From athletes returning to their sport to patients recovering from surgery, we're here to support your journey to wellness.
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-muted-foreground leading-relaxed"
+          >
+            Our team of experienced physiotherapists combines traditional
+            knowledge with modern clinical techniques to deliver results. From
+            athletes returning to their sport to patients recovering from
+            surgery, we're here to support your journey to wellness.
           </motion.p>
         </motion.div>
       </section>
@@ -159,17 +202,23 @@ export default function About() {
             variants={containerVariants}
             className="text-center mb-16"
           >
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4">
+            <motion.h2
+              variants={itemVariants}
+              className="text-4xl font-bold mb-4"
+            >
               Core Values
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-lg text-muted-foreground">
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-muted-foreground"
+            >
               What drives us every day
             </motion.p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, idx) => {
-              const Icon = value.icon
+              const Icon = value.icon;
               return (
                 <motion.div
                   key={idx}
@@ -195,7 +244,7 @@ export default function About() {
                     <p className="text-muted-foreground">{value.description}</p>
                   </motion.div>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </div>
@@ -211,16 +260,22 @@ export default function About() {
             variants={containerVariants}
             className="text-center mb-16"
           >
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4">
+            <motion.h2
+              variants={itemVariants}
+              className="text-4xl font-bold mb-4"
+            >
               Meet Our Team
             </motion.h2>
-            <motion.p variants={itemVariants} className="text-lg text-muted-foreground">
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-muted-foreground"
+            >
               Experienced professionals dedicated to your care
             </motion.p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, idx) => (
+            {physiotherapists.map((member, idx) => (
               <motion.div
                 key={idx}
                 initial="hidden"
@@ -237,22 +292,20 @@ export default function About() {
                 }}
               >
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white border border-border overflow-hidden hover:shadow-xl transition-shadow"
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white border border-border p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center text-center"
                 >
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
+                  {/* Circular badge with "Dr" */}
+                  <div className="w-16 h-16 bg-primary text-white flex items-center justify-center rounded-full mb-4 text-xl font-bold">
+                    Dr
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                    <p className="text-primary font-semibold mb-3">{member.role}</p>
-                    <p className="text-muted-foreground text-sm">{member.specialty}</p>
-                  </div>
+                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                  <p className="text-primary font-semibold mb-2">
+                    {member.designation}
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    {member.qualifications.join(", ")}
+                  </p>
                 </motion.div>
               </motion.div>
             ))}
@@ -271,15 +324,12 @@ export default function About() {
         >
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { label: 'Happy Patients', value: '2000+' },
-              { label: 'Years Experience', value: '15+' },
-              { label: 'Expert Team', value: '10+' },
-              { label: 'Success Rate', value: '98%' },
+              { label: "Happy Patients", value: "2000+" },
+              { label: "Years Experience", value: "15+" },
+              { label: "Expert Team", value: "10+" },
+              { label: "Success Rate", value: "98%" },
             ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-              >
+              <motion.div key={idx} variants={itemVariants}>
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   className="text-5xl font-bold mb-2"
@@ -302,7 +352,9 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-8">State-of-the-Art Facility</h2>
+            <h2 className="text-3xl font-bold mb-8">
+              State-of-the-Art Facility
+            </h2>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -311,11 +363,11 @@ export default function About() {
               className="space-y-4"
             >
               {[
-                'Modern physiotherapy equipment',
-                'Advanced therapeutic technologies',
-                'Clean and welcoming treatment rooms',
-                'Private consultation areas',
-                'Accessible facility with parking',
+                "Modern physiotherapy equipment",
+                "Advanced therapeutic technologies",
+                "Clean and welcoming treatment rooms",
+                "Private consultation areas",
+                "Accessible facility with parking",
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -348,5 +400,5 @@ export default function About() {
 
       <Footer />
     </div>
-  )
+  );
 }
