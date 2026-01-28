@@ -71,17 +71,17 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-muted">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
           className="max-w-7xl mx-auto text-center"
         >
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold mb-6">
+          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl text-amber-50 font-bold mb-6">
             About MedAlign
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
             Dedicated to excellence in physiotherapy care and recovery.
           </motion.p>
         </motion.div>
@@ -98,7 +98,7 @@ export default function About() {
             className="relative h-96"
           >
             <Image
-              src="/clinic-interior.jpg"
+              src="/2.jpeg"
               alt="Our clinic"
               fill
               className="object-cover border border-border"
@@ -337,7 +337,7 @@ export default function About() {
             className="relative h-96"
           >
             <Image
-              src="/clinic-interior.jpg"
+              src="/6.jpeg"
               alt="Clinic facility"
               fill
               className="object-cover border border-border"

@@ -31,7 +31,7 @@ export default function Services() {
   const services = [
     {
       title: 'Post-Surgery Rehabilitation',
-      image: '/rehabilitation.jpg',
+      image: '/h1.jpg',
       description: 'Comprehensive recovery programs designed to restore strength, mobility, and function after surgical procedures.',
       details: [
         'Pre and post-operative assessment',
@@ -43,7 +43,7 @@ export default function Services() {
     },
     {
       title: 'Sports Physiotherapy',
-      image: '/sports-physio.jpg',
+      image: '/h2.jpg',
       description: 'Specialized treatment for athletes and active individuals to prevent injuries and enhance performance.',
       details: [
         'Sports injury assessment and treatment',
@@ -55,7 +55,7 @@ export default function Services() {
     },
     {
       title: 'Pain Management',
-      image: '/rehabilitation.jpg',
+      image: '/h3.jpg',
       description: 'Evidence-based approaches to treat both chronic and acute pain conditions effectively.',
       details: [
         'Manual therapy and mobilization',
@@ -67,7 +67,7 @@ export default function Services() {
     },
     {
       title: 'Wellness & Prevention',
-      image: '/clinic-interior.jpg',
+      image: '/8.jpeg',
       description: 'Preventive programs and lifestyle optimization to maintain optimal health and prevent injuries.',
       details: [
         'Postural assessment and training',

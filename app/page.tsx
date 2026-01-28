@@ -264,7 +264,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <Image
-                src="/clinic-interior.jpg"
+                src="/00.jpeg"
                 alt="Clinic interior"
                 width={500}
                 height={500}

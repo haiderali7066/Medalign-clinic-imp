@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const heroImages = [
-  "/hero-physio.jpg",
-  "/hero-physio-2.jpg",
-  "/hero-physio-3.jpg",
+  "/h1.jpg",
+  "/h2.jpg",
+  "/h3.jpg",
 ];
 
 const containerVariants = {
