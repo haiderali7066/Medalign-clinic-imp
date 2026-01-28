@@ -1,0 +1,117 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
+
+interface Testimonial {
+  name: string;
+  role: string;
+  text: string;
+  rating: number; // 1-5
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Ali Khan",
+    role: "Patient",
+    text: "Medalign helped me recover from my back pain in just a few sessions. Truly amazing care!",
+    rating: 5,
+  },
+  {
+    name: "Sara Ahmed",
+    role: "Patient",
+    text: "The physiotherapists are professional and friendly. Highly recommend Medalign.",
+    rating: 4,
+  },
+  {
+    name: "Ahmed Raza",
+    role: "Patient",
+    text: "Excellent treatment and guidance. Rehab, realign, restore – they really mean it!",
+    rating: 5,
+  },
+];
+
+export default function TestimonialsCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  const prevTestimonial = () => {
+    setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const nextTestimonial = () => {
+    setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <section className="w-full max-w-md mx-auto px-4 py-12">
+      <h2 className="text-2xl font-bold text-center mb-6">
+        What Our Patients Say
+      </h2>
+
+      <div className="relative overflow-hidden rounded-xl shadow-md border border-b-blue-400 bg-white">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5 }}
+            className="p-6 flex flex-col items-center text-center"
+          >
+            {/* Rating Stars */}
+            <div className="flex mb-3">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-5 h-5 ${
+                    i < testimonials[current].rating
+                      ? "text-yellow-400"
+                      : "text-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+              "{testimonials[current].text}"
+            </p>
+            <h3 className="font-semibold text-gray-900">
+              {testimonials[current].name}
+            </h3>
+            <span className="text-sm text-gray-500">
+              {testimonials[current].role}
+            </span>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevTestimonial}
+          className="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition"
+        >
+          <ArrowLeft className="w-4 h-4" />
+        </button>
+        <button
+          onClick={nextTestimonial}
+          className="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition"
+        >
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {testimonials.map((_, index) => (
+          <span
+            key={index}
+            className={`w-3 h-3 rounded-full cursor-pointer ${
+              index === current ? "bg-blue-600" : "bg-gray-300"
+            }`}
+            onClick={() => setCurrent(index)}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}

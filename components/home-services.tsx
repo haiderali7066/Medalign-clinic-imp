@@ -24,6 +24,8 @@ const itemVariants = {
 };
 
 export default function Services() {
+  const whatsappNumber = "923260341216"; // Your WhatsApp number with country code
+
   const services = [
     {
       icon: Activity,
@@ -68,6 +70,14 @@ export default function Services() {
         "Professional physiotherapy services delivered safely and comfortably at your home.",
     },
   ];
+
+  const handleWhatsApp = (serviceTitle: string) => {
+    const message = `Hello! I am interested in your ${serviceTitle} service.`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message,
+    )}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
@@ -118,7 +128,7 @@ export default function Services() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -6 }}
-                className="bg-white text-foreground p-8  shadow-md hover:shadow-xl transition"
+                className="bg-white text-foreground p-8 shadow-md hover:shadow-xl transition"
               >
                 <Icon
                   className="w-12 h-12 text-primary mb-6"
@@ -133,8 +143,9 @@ export default function Services() {
                 <motion.button
                   whileHover={{ x: 6 }}
                   className="text-primary font-semibold text-sm hover:underline"
+                  onClick={() => handleWhatsApp(service.title)}
                 >
-                  Read More →
+                  Explore More →
                 </motion.button>
               </motion.div>
             );
@@ -155,7 +166,7 @@ export default function Services() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -6 }}
-                className="bg-white text-foreground p-8  shadow-md hover:shadow-xl transition"
+                className="bg-white text-foreground p-8 shadow-md hover:shadow-xl transition"
               >
                 <Icon
                   className="w-12 h-12 text-primary mb-6"
@@ -170,8 +181,9 @@ export default function Services() {
                 <motion.button
                   whileHover={{ x: 6 }}
                   className="text-primary font-semibold text-sm hover:underline"
+                  onClick={() => handleWhatsApp(service.title)}
                 >
-                  Read More →
+                  Explore More →
                 </motion.button>
               </motion.div>
             );

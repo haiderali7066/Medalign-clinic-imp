@@ -10,11 +10,12 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/contact', label: 'Contact' },
-  ]
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
+    { href: "/blogs", label: "Our blogs" },
+  ];
 
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
