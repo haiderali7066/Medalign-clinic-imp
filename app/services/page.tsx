@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+
+const WHATSAPP_LINK = "https://wa.me/923260341216";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -51,7 +53,7 @@ export default function Services() {
       title: "Posture & Spine Correction",
       image: "/h3.jpg",
       description:
-        "Correction of forward head posture, rounded shoulders, kyphosis, scoliosis, and spinal imbalances for lasting spine health.",
+        "Correction of spinal imbalances, scoliosis, and posture-related issues for long-term spine health.",
     },
     {
       title: "Orthopedic Physiotherapy",
@@ -63,32 +65,32 @@ export default function Services() {
       title: "Neurological Physiotherapy",
       image: "/h2.jpg",
       description:
-        "Movement retraining and functional recovery for stroke, nerve injuries, Parkinson’s disease, and neurological disorders.",
+        "Functional recovery for stroke, nerve injuries, Parkinson’s disease, and neurological disorders.",
     },
     {
       title: "Geriatric / Senior Care",
       image:
         "https://familytreecares.com/wp-content/uploads/2020/06/senior-care-backyard-smal.jpg",
       description:
-        "Fall prevention, arthritis management, balance training, and mobility improvement for older adults.",
+        "Fall prevention, balance training, arthritis care, and mobility improvement for seniors.",
     },
     {
       title: "Women’s Health Physiotherapy",
       image: "/s5.jpg",
       description:
-        "Pelvic floor rehabilitation, postnatal recovery, and pregnancy-related pain management.",
+        "Pelvic floor rehab, postnatal recovery, and pregnancy-related pain management.",
     },
     {
       title: "Functional Training & Movement Optimization",
       image: "/s6.jpg",
       description:
-        "Balance, coordination, and strength training to improve real-life movement and performance.",
+        "Strength, balance, and coordination training for real-life movement efficiency.",
     },
     {
       title: "Ergonomic & Workplace Assessment",
       image: "/s7.jpg",
       description:
-        "Posture correction and workspace optimization to prevent pain from prolonged sitting or repetitive tasks.",
+        "Workspace optimization and posture correction to prevent work-related pain.",
     },
   ];
 
@@ -114,14 +116,13 @@ export default function Services() {
             variants={itemVariants}
             className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Expert physiotherapy care designed to restore movement, reduce pain,
-            and improve quality of life. Every treatment plan is personalized,
-            evidence-based, and focused on long-term results.
+            Expert physiotherapy care focused on recovery, mobility, and
+            long-term results — personalized for every patient.
           </motion.p>
         </motion.div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-20">
           {services.map((service, idx) => (
@@ -132,9 +133,7 @@ export default function Services() {
               viewport={{ once: true }}
               variants={containerVariants}
             >
-              <div
-                className={`grid md:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-              >
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Image */}
                 <motion.div
                   variants={{
@@ -145,10 +144,12 @@ export default function Services() {
                       transition: { duration: 0.8 },
                     },
                   }}
-                  className={`relative h-96 ${idx % 2 === 1 ? "md:order-2" : ""}`}
+                  className={`relative h-96 ${
+                    idx % 2 === 1 ? "md:order-2" : ""
+                  }`}
                 >
                   <Image
-                    src={service.image || "/placeholder.svg"}
+                    src={service.image}
                     alt={service.title}
                     fill
                     className="object-cover border border-border"
@@ -160,34 +161,25 @@ export default function Services() {
                   variants={itemVariants}
                   className={idx % 2 === 1 ? "md:order-1" : ""}
                 >
-                  <motion.h2
-                    variants={itemVariants}
-                    className="text-3xl md:text-4xl font-bold mb-4"
-                  >
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     {service.title}
-                  </motion.h2>
-
-                  <motion.p
-                    variants={itemVariants}
-                    className="text-lg text-muted-foreground mb-8 leading-relaxed"
-                  >
+                  </h2>
+                  <p className="text-lg text-muted-foreground mb-8">
                     {service.description}
-                  </motion.p>
+                  </p>
 
-                  <motion.div variants={itemVariants}>
-                    <Link href="/appointment">
-                      <motion.button
-                        whileHover={{
-                          scale: 1.05,
-                          boxShadow: "0 10px 30px rgba(45, 138, 143, 0.3)",
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-3 bg-primary text-white font-bold flex items-center gap-2 hover:shadow-lg transition-shadow"
-                      >
-                        Book This Service <ArrowRight size={20} />
-                      </motion.button>
-                    </Link>
-                  </motion.div>
+                  <Link href={WHATSAPP_LINK} target="_blank">
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                        boxShadow: "0 10px 30px rgba(45,138,143,0.3)",
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-8 py-3 bg-primary text-white font-bold flex items-center gap-2"
+                    >
+                      Book on WhatsApp <ArrowRight size={20} />
+                    </motion.button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
@@ -195,7 +187,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary text-white">
         <motion.div
           initial="hidden"
@@ -211,22 +203,21 @@ export default function Services() {
             Ready to Start Your Recovery?
           </motion.h2>
           <motion.p variants={itemVariants} className="text-lg mb-8 opacity-90">
-            Schedule a consultation with our expert physiotherapists today.
+            Chat directly with our physiotherapists on WhatsApp.
           </motion.p>
-          <motion.div variants={itemVariants}>
-            <Link href="/appointment">
-              <motion.button
-                whileHover={{
-                  scale: 1.08,
-                  boxShadow: "0 15px 40px rgba(0, 0, 0, 0.3)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-white text-primary font-bold text-lg flex items-center gap-2 hover:shadow-xl transition-shadow mx-auto"
-              >
-                Book Appointment <ArrowRight size={24} />
-              </motion.button>
-            </Link>
-          </motion.div>
+
+          <Link href={WHATSAPP_LINK} target="_blank">
+            <motion.button
+              whileHover={{
+                scale: 1.08,
+                boxShadow: "0 15px 40px rgba(0,0,0,0.3)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-white text-primary font-bold text-lg flex items-center gap-2 mx-auto"
+            >
+              Chat on WhatsApp <ArrowRight size={24} />
+            </motion.button>
+          </Link>
         </motion.div>
       </section>
 
