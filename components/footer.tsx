@@ -80,10 +80,10 @@ export default function Footer() {
               >
                 <Phone className="w-5 h-5" />
                 <a
-                  href="tel:+92326034216"
+                  href="tel:+923260341216"
                   className="hover:underline transition-all"
                 >
-                  +92 326 034216
+                  +92 326 0341216
                 </a>
               </motion.div>
 
