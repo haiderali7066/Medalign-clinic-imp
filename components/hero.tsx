@@ -112,7 +112,7 @@ export default function HeroSection() {
             </a>
 
             {/* Learn More → WhatsApp */}
-            <a
+            {/* <a
               href="https://wa.me/923260341216"
               target="_blank"
               rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export default function HeroSection() {
               >
                 Learn More
               </motion.button>
-            </a>
+            </a> */}
           </motion.div>
         </motion.div>
       </div>
