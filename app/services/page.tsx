@@ -67,7 +67,8 @@ export default function Services() {
     },
     {
       title: "Geriatric / Senior Care",
-      image: "/s4.jpg",
+      image:
+        "https://familytreecares.com/wp-content/uploads/2020/06/senior-care-backyard-smal.jpg",
       description:
         "Fall prevention, arthritis management, balance training, and mobility improvement for older adults.",
     },

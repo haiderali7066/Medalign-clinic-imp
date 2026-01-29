@@ -87,7 +87,8 @@ export default function Contact() {
               {
                 icon: MapPin,
                 label: "Address",
-                value: "Bahria Town Phase 4, Islamabad",
+                value:
+                  " Shop 1, lower ground, building #39, Civic centre Bahria town phase 4 Bahria Town, Islamabad, 46000",
               },
               { icon: Phone, label: "Landline", value: "051 2711346" },
               { icon: Phone, label: "Phone", value: "+92326034126" },
@@ -137,7 +138,7 @@ export default function Contact() {
                 height="100%"
                 frameBorder="0"
                 title="MedAlign Physiotherapy Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.2854348886706!2d72.80215!3d33.82015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe03a8c3c1c7%3A0x1234567890abcdef!2sBahria%20Town%20Phase%204%2C%20Islamabad!5e0!3m2!1sen!2spk!4v1234567890123"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.1340023588605!2d73.11965407611126!3d33.54989454408803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed9fbe14e8cd%3A0x99391c1436b63a8c!2sMedalign%20Physiotherapy!5e0!3m2!1sen!2s!4v1769694881431"
                 allowFullScreen
                 loading="lazy"
               />

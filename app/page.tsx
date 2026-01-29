@@ -368,7 +368,11 @@ export default function Home() {
           {/* Contact Cards */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { icon: Phone, label: "Phone", value: "051 2711346" },
+              {
+                icon: Phone,
+                label: "Phone",
+                value: "051 2711346 / +92 326 0341216",
+              },
               {
                 icon: Mail,
                 label: "Email",
@@ -377,7 +381,8 @@ export default function Home() {
               {
                 icon: MapPin,
                 label: "Location",
-                value: "Bahria Town Phase 4, Islamabad",
+                value:
+                  " Shop 1, lower ground, building #39, Civic centre Bahria town phase 4 Bahria Town, Islamabad, 46000",
               },
             ].map((contact, idx) => {
               const Icon = contact.icon;
@@ -419,7 +424,7 @@ export default function Home() {
             className="text-center mt-12"
           >
             <a
-              href="https://wa.me/92512711346"
+              href="https://wa.me/923260341216"
               target="_blank"
               rel="noopener noreferrer"
             >
