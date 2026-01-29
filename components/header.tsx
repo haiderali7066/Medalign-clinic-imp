@@ -30,7 +30,7 @@ export default function Header() {
   };
 
   // WhatsApp number (replace with your number)
-  const whatsappNumber = "92326034126";
+  const whatsappNumber = "923260341216";
   const whatsappMessage = encodeURIComponent(
     "Hello! I would like to book an appointment.",
   );
