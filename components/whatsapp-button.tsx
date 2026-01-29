@@ -3,7 +3,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "+923260341216"; // Medalign WhatsApp
+  const whatsappNumber = "923260341216"; // Medalign WhatsApp
   const whatsappMessage = encodeURIComponent(
     "Hello! I want to inquire about physiotherapy services.",
   );
