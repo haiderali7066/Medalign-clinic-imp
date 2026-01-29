@@ -91,7 +91,7 @@ export default function Contact() {
                   " Shop 1, lower ground, building #39, Civic centre Bahria town phase 4 Bahria Town, Islamabad, 46000",
               },
               { icon: Phone, label: "Landline", value: "051 2711346" },
-              { icon: Phone, label: "Phone", value: "+92326034126" },
+              { icon: Phone, label: "Phone", value: "+923260341216" },
               {
                 icon: Mail,
                 label: "Email",
