@@ -93,8 +93,12 @@ export default function HeroSection() {
             variants={itemVariants}
             className="flex flex-col mt-20 sm:flex-row gap-4 mt-8 justify-start items-start"
           >
-            {/* Book Appointment */}
-            <Link href="/appointment">
+            {/* Book Appointment → WhatsApp */}
+            <a
+              href="https://wa.me/923260341216"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.button
                 whileHover={{
                   scale: 1.05,
@@ -105,7 +109,7 @@ export default function HeroSection() {
               >
                 Book Appointment <ArrowRight size={20} />
               </motion.button>
-            </Link>
+            </a>
 
             {/* Learn More → WhatsApp */}
             <a
