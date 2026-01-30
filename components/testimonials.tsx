@@ -13,23 +13,24 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Ali Khan",
-    role: "Patient",
-    text: "Medalign helped me recover from my back pain in just a few sessions. Truly amazing care!",
-    rating: 5,
-  },
-  {
-    name: "Sara Ahmed",
-    role: "Patient",
-    text: "The physiotherapists are professional and friendly. Highly recommend Medalign.",
-    rating: 4,
-  },
-  {
-    name: "Ahmed Raza",
-    role: "Patient",
-    text: "Excellent treatment and guidance. Rehab, realign, restore – they really mean it!",
-    rating: 5,
-  },
+  name: "Tahir Sibtain",
+  role: "Patient",
+  text: "With severe back pain I went to the clinic which took great care of me and I came out with a smiling face. Great relief for which I was desperate. My body movements are free, life is back to normal. I strongly recommend trying this facility with true expertise.",
+  rating: 5,
+},
+{
+  name: "Javeria Sehar",
+  role: "Patient",
+  text: "Very helpful and professional attitude. My mom was in serious pain and they responded promptly. Dr. Anum stayed in constant touch, guided emergency techniques, and provided gentle, professional treatment. Alhamdulillah, her sciatica and shoulder pain are relieved. A genuinely excellent experience.",
+  rating: 5,
+},
+{
+  name: "Shahzeb Khattak",
+  role: "Patient",
+  text: "Dr. Anum Zafar is widely recognized for her exceptional skills and dedication. Patients commend her thorough assessments, personalized treatment plans, and compassionate care. Her commitment to restoring mobility and quality of life has earned deep trust in the community.",
+  rating: 5,
+},
+
 ];
 
 export default function TestimonialsCarousel() {

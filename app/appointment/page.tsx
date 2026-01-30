@@ -20,15 +20,6 @@ const itemVariants = {
 };
 
 export default function Appointment() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    service: "post-surgery-rehab",
-    date: "",
-    time: "",
-    notes: "",
-  });
   const [submitted, setSubmitted] = useState(false);
 
   const services = [
@@ -40,41 +31,17 @@ export default function Appointment() {
   ];
 
   const timeSlots = [
-    "09:00 AM",
     "10:00 AM",
     "11:00 AM",
     "12:00 PM",
-    "02:00 PM",
     "03:00 PM",
     "04:00 PM",
     "05:00 PM",
+    "06:00 PM",
+    "07:00 PM",
+    "08:00 PM",
+    "09:00 PM",
   ];
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        service: "post-surgery-rehab",
-        date: "",
-        time: "",
-        notes: "",
-      });
-      setSubmitted(false);
-    }, 5000);
-  };
 
   const getTodayDate = () => new Date().toISOString().split("T")[0];
   const getMaxDate = () => {
@@ -87,13 +54,13 @@ export default function Appointment() {
     <div className="bg-white text-foreground">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-muted">
+      {/* Hero */}
+      <section className="pt-32 pb-16 px-4 bg-muted text-center">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="max-w-7xl mx-auto text-center"
+          className="max-w-4xl mx-auto"
         >
           <motion.h1
             variants={itemVariants}
@@ -103,16 +70,16 @@ export default function Appointment() {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="text-xl text-muted-foreground"
           >
-            Schedule your physiotherapy session with our expert team. Available
-            Monday to Saturday.
+            Share your details and we’ll contact you shortly to confirm your
+            physiotherapy session.
           </motion.p>
         </motion.div>
       </section>
 
-      {/* Booking Form */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Form */}
+      <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto">
           {submitted ? (
             <motion.div
@@ -120,148 +87,117 @@ export default function Appointment() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-16"
             >
-              <motion.div
-                animate={{ scale: [1, 1.2, 1], rotate: 360 }}
-                transition={{ duration: 0.8 }}
-                className="flex justify-center mb-6"
-              >
-                <CheckCircle size={80} className="text-primary" />
-              </motion.div>
+              <CheckCircle size={80} className="mx-auto text-primary mb-6" />
               <h2 className="text-4xl font-bold mb-4 text-primary">
-                Booking Confirmed!
+                Request Submitted!
               </h2>
-              <p className="text-lg text-muted-foreground mb-2">
-                Thank you for scheduling your appointment.
-              </p>
               <p className="text-muted-foreground">
-                We'll contact you shortly to confirm the details.
+                Thank you. Our team will contact you shortly.
               </p>
             </motion.div>
           ) : (
             <motion.form
-              onSubmit={handleSubmit}
+              action="https://usebasin.com/f/09c7e5171144"
+              method="POST"
+              onSubmit={() => setSubmitted(true)}
               initial="hidden"
               animate="visible"
               variants={containerVariants}
               className="bg-muted p-8 border border-border space-y-6"
             >
-              {/* Personal Information */}
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold mb-6">
-                  Personal Information
-                </h3>
-              </motion.div>
+              <motion.h3
+                variants={itemVariants}
+                className="text-2xl font-bold mb-4"
+              >
+                Personal Information
+              </motion.h3>
 
+              {/* Name & Phone (REQUIRED) */}
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div variants={itemVariants}>
                   <label className="block font-semibold mb-2">
                     Full Name *
                   </label>
-                  <motion.input
+                  <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
-                    whileFocus={{ scale: 1.02 }}
-                    className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
+                    className="w-full px-4 py-3 border bg-white"
                     placeholder="Your full name"
                   />
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
                   <label className="block font-semibold mb-2">
-                    Phone Number *
+                    Phone / WhatsApp *
                   </label>
-                  <motion.input
+                  <input
                     type="tel"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
                     required
-                    whileFocus={{ scale: 1.02 }}
-                    className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
-                    placeholder="Your phone number"
+                    className="w-full px-4 py-3 border bg-white"
+                    placeholder="+92 3XX XXXXXXX"
                   />
                 </motion.div>
               </div>
 
-              {/* Optional Email */}
+              {/* Optional Fields */}
               <motion.div variants={itemVariants}>
                 <label className="block font-semibold mb-2">Email</label>
-                <motion.input
+                <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
+                  className="w-full px-4 py-3 border bg-white"
                   placeholder="your@email.com"
                 />
-              </motion.div>
-
-              {/* Appointment Details */}
-              <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-bold mb-6 mt-8">
-                  Appointment Details
-                </h3>
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <label className="block font-semibold mb-2">
                   Service Required
                 </label>
-                <motion.select
+                <select
                   name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
+                  className="w-full px-4 py-3 border bg-white"
                 >
-                  {services.map((service) => (
-                    <option key={service.value} value={service.value}>
-                      {service.label}
+                  <option value="">Select a service (optional)</option>
+                  {services.map((s) => (
+                    <option key={s.value} value={s.label}>
+                      {s.label}
                     </option>
                   ))}
-                </motion.select>
+                </select>
               </motion.div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div variants={itemVariants}>
                   <label className="block font-semibold mb-2 flex items-center gap-2">
-                    <Calendar size={18} className="text-primary" /> Preferred
-                    Date
+                    <Calendar size={16} /> Preferred Date
                   </label>
-                  <motion.input
+                  <input
                     type="date"
                     name="date"
-                    value={formData.date}
-                    onChange={handleChange}
                     min={getTodayDate()}
                     max={getMaxDate()}
-                    whileFocus={{ scale: 1.02 }}
-                    className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
+                    className="w-full px-4 py-3 border bg-white"
                   />
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
                   <label className="block font-semibold mb-2 flex items-center gap-2">
-                    <Clock size={18} className="text-primary" /> Preferred Time
+                    <Clock size={16} /> Preferred Time
                   </label>
-                  <motion.select
+                  <select
                     name="time"
-                    value={formData.time}
-                    onChange={handleChange}
-                    whileFocus={{ scale: 1.02 }}
-                    className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all bg-white"
+                    className="w-full px-4 py-3 border bg-white"
                   >
-                    <option value="">Select a time</option>
-                    {timeSlots.map((slot) => (
-                      <option key={slot} value={slot}>
-                        {slot}
+                    <option value="">Select time (optional)</option>
+                    {timeSlots.map((t) => (
+                      <option key={t} value={t}>
+                        {t}
                       </option>
                     ))}
-                  </motion.select>
+                  </select>
                 </motion.div>
               </div>
 
@@ -269,66 +205,48 @@ export default function Appointment() {
                 <label className="block font-semibold mb-2">
                   Additional Notes
                 </label>
-                <motion.textarea
+                <textarea
                   name="notes"
-                  value={formData.notes}
-                  onChange={handleChange}
                   rows={4}
-                  whileFocus={{ scale: 1.02 }}
-                  className="w-full px-4 py-3 border border-border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all resize-none bg-white"
-                  placeholder="Any specific concerns or medical history?"
+                  className="w-full px-4 py-3 border bg-white resize-none"
+                  placeholder="Any pain, injury, or concern (optional)"
                 />
               </motion.div>
 
               <motion.button
-                variants={itemVariants}
                 type="submit"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 10px 30px rgba(45, 138, 143, 0.3)",
-                }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full px-6 py-4 bg-primary text-white font-bold text-lg flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
+                className="w-full py-4 bg-primary text-white font-bold text-lg flex items-center justify-center gap-2"
               >
-                Confirm Booking <ArrowRight size={22} />
+                Submit Request <ArrowRight size={20} />
               </motion.button>
             </motion.form>
           )}
 
           {/* Info Cards */}
           {!submitted && (
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={containerVariants}
-              className="grid md:grid-cols-2 gap-6 mt-12"
-            >
-              <motion.div
-                variants={itemVariants}
-                className="bg-muted p-6 border border-border"
-              >
-                <h4 className="font-bold text-lg mb-3">Hours</h4>
-                <div className="space-y-2 text-muted-foreground text-sm">
-                  <p>Mon – Thu: 10:00 AM – 10:00 PM</p>
-                  <p>Fri: 3:00 PM – 10:00 PM</p>
-                  <p>Sat: 10:00 AM – 10:00 PM</p>
-                  <p>Sun: Closed</p>
-                </div>
-              </motion.div>
+            <div className="grid md:grid-cols-2 gap-6 mt-12">
+              <div className="bg-muted p-6 border">
+                <h4 className="font-bold mb-3">Clinic Hours</h4>
+                <ul className="text-muted-foreground text-sm space-y-1 list-disc list-inside">
+                  <li>Mon – Thu: 10:00 AM – 10:00 PM</li>
+                  <li>Fri: 3:00 PM – 10:00 PM</li>
+                  <li>Sat: 10:00 AM – 10:00 PM</li>
+                  <li>Sun: Closed</li>
+                </ul>
+              </div>
 
-              <motion.div
-                variants={itemVariants}
-                className="bg-muted p-6 border border-border"
-              >
-                <h4 className="font-bold text-lg mb-3">Contact</h4>
-                <div className="space-y-2 text-muted-foreground text-sm">
-                  <p>Phone: 051 2711346</p>
+              <div className="bg-muted p-6 border">
+                <h4 className="font-bold mb-3">Contact</h4>
+                <div className="text-muted-foreground text-sm space-y-1">
+                  <p>Landline: 051 2711346</p>
+                  <p>WhatsApp: +92 326 0341216</p>
                   <p>Email: Medalign.physio@gmail.com</p>
-                  <p>Location: Bahria Town Phase 4, Islamabad</p>
+                  <p>Bahria Town Phase 4, Islamabad</p>
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           )}
         </div>
       </section>

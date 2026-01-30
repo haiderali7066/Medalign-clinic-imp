@@ -88,10 +88,10 @@ export default function Contact() {
                 icon: MapPin,
                 label: "Address",
                 value:
-                  " Shop 1, lower ground, building #39, Civic centre Bahria town phase 4 Bahria Town, Islamabad, 46000",
+                  "Shop 1, Lower Ground, Building #39, Civic Centre, Bahria Town Phase 4, Islamabad, 46000",
               },
               { icon: Phone, label: "Landline", value: "051 2711346" },
-              { icon: Phone, label: "Phone", value: "+923260341216" },
+              { icon: Phone, label: "Phone", value: "+92 326 0341216" },
               {
                 icon: Mail,
                 label: "Email",
@@ -100,8 +100,12 @@ export default function Contact() {
               {
                 icon: Clock,
                 label: "Hours",
-                value:
-                  "Mon-Thu: 10AM-10PM, Fri: 3PM-10PM, Sat: 10AM-10PM, Sun: Closed",
+                value: [
+                  "Mon–Thu: 10AM–10PM",
+                  "Fri: 3PM–10PM",
+                  "Sat: 10AM–10PM",
+                  "Sun: Closed",
+                ],
               },
             ].map((contact, idx) => {
               const Icon = contact.icon;
@@ -116,7 +120,16 @@ export default function Contact() {
                   >
                     <Icon className="w-10 h-10 text-primary mb-4" />
                     <h3 className="font-bold text-lg mb-2">{contact.label}</h3>
-                    <p className="text-muted-foreground">{contact.value}</p>
+
+                    {Array.isArray(contact.value) ? (
+                      <ul className="text-muted-foreground space-y-1">
+                        {contact.value.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-muted-foreground">{contact.value}</p>
+                    )}
                   </motion.div>
                 </motion.div>
               );
@@ -137,7 +150,7 @@ export default function Contact() {
                 width="100%"
                 height="100%"
                 frameBorder="0"
-                title="MedAlign Physiotherapy Location"
+                title="Medalign Physiotherapy Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.1340023588605!2d73.11965407611126!3d33.54989454408803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed9fbe14e8cd%3A0x99391c1436b63a8c!2sMedalign%20Physiotherapy!5e0!3m2!1sen!2s!4v1769694881431"
                 allowFullScreen
                 loading="lazy"
